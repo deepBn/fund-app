@@ -1,12 +1,33 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import { Container, Content, Card, CardItem, Text, Icon, Right } from 'native-base';
 
 class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Funds',
+  };
+
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Home Screen</Text>
-      </View>
+      <Container>
+        <Content padder>
+          <Card>
+            <CardItem>
+              <Icon type="MaterialCommunityIcons" name="currency-inr" />
+              <Text>Total avalible fund</Text>
+              <Right>
+                <Text>0</Text>
+              </Right>
+            </CardItem>
+            <CardItem>
+              <Icon type="MaterialCommunityIcons" name="bank" />
+              <Text>Last transaction amount</Text>
+              <Right>
+                <Text>0</Text>
+              </Right>
+            </CardItem>
+          </Card>
+        </Content>
+      </Container>
     );
   }
 }
