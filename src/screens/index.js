@@ -3,9 +3,7 @@ import {createStackNavigator} from 'react-navigation';
 
 export const RootStack = createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
-    }
+    Home: HomeScreen,
   },
   {
     initialRouteName: 'Home',

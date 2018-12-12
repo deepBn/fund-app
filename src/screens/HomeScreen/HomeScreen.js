@@ -3,7 +3,10 @@ import { Container, Content, Card, CardItem, Text, Icon, Right, Left } from 'nat
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    title: 'Funds',
+    headerTitle: <Text style={{color: "#fff", fontWeight: "bold"}}>    Funds</Text>,
+    headerStyle: {
+      backgroundColor: '#6b52ae',
+    },
   };
 
   render() {
@@ -11,8 +14,8 @@ class HomeScreen extends Component {
       <Container>
         <Content padder>
           <Card>
-            <CardItem>
-              <Icon type="MaterialCommunityIcons" name="currency-inr" />
+            <CardItem bordered>
+              <Icon type="MaterialCommunityIcons" name="currency-inr" style={{color: "#6b52ae"}}/>
               <Left>
                 <Text>Total avalible fund</Text>
               </Left>
@@ -20,8 +23,8 @@ class HomeScreen extends Component {
                 <Text>0</Text>
               </Right>
             </CardItem>
-            <CardItem>
-              <Icon type="MaterialCommunityIcons" name="bank" />
+            <CardItem bordered>
+              <Icon type="Ionicons" name="swap" style={{color: "#6b52ae"}}/>
               <Left>
                 <Text>Last transaction</Text>
               </Left>
