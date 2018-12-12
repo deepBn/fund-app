@@ -1,9 +1,27 @@
 import React, {Component} from 'react';
-import { Container, Content, Card, CardItem, Text, Icon, Right, Left } from 'native-base';
+import {
+  Container,
+  Content,
+  Card,
+  CardItem,
+  Text,
+  Icon,
+  Right,
+  Left,
+  Button,
+  View
+} from 'native-base';
+import {StyleSheet} from 'react-native';
 
 class HomeScreen extends Component {
   static navigationOptions = {
-    headerTitle: <Text style={{color: "#fff", fontWeight: "bold"}}>    Funds</Text>,
+    headerTitle:
+      <Text
+        style={{
+          color: "#fff",
+          fontWeight: "bold",
+          fontSize: 20}}
+      >    Funds</Text>,
     headerStyle: {
       backgroundColor: '#6b52ae',
     },
@@ -12,7 +30,7 @@ class HomeScreen extends Component {
   render() {
     return (
       <Container>
-        <Content padder>
+        <Content padder contentContainerStyle={{flex: 1}}>
           <Card>
             <CardItem bordered>
               <Icon type="MaterialCommunityIcons" name="currency-inr" style={{color: "#6b52ae"}}/>
@@ -33,10 +51,26 @@ class HomeScreen extends Component {
               </Right>
             </CardItem>
           </Card>
+          <View style={{flexDirection: "row", marginTop: "auto"}}>
+            <Button rounded style={styles.buttonStyles}>
+              <Text>Add fund</Text>
+            </Button>
+            <Button rounded style={styles.buttonStyles}>
+              <Text>Extract fund</Text>
+            </Button>
+          </View>
         </Content>
       </Container>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  buttonStyles: {
+    flex: 1,
+    margin: 2,
+    backgroundColor: "#6b52ae"
+  }
+});
 
 export default HomeScreen;
