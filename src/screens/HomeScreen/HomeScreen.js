@@ -52,7 +52,11 @@ class HomeScreen extends Component {
             </CardItem>
           </Card>
           <View style={{flexDirection: "row", marginTop: "auto"}}>
-            <Button rounded style={styles.buttonStyles}>
+            <Button
+              rounded
+              style={styles.buttonStyles}
+              onPress={() => this.props.navigation.navigate('AddFund')}
+            >
               <Text>Add fund</Text>
             </Button>
             <Button rounded style={styles.buttonStyles}>
