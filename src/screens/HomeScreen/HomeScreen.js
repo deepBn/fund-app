@@ -12,6 +12,9 @@ import {
   View
 } from 'native-base';
 import {StyleSheet} from 'react-native';
+import {connect} from 'react-redux';
+
+import {fetchFunds} from '../../store/actions';
 
 class HomeScreen extends Component {
   static navigationOptions = {
@@ -26,6 +29,10 @@ class HomeScreen extends Component {
       backgroundColor: '#6b52ae',
     },
   };
+
+  componentDidMount() {
+    this.props.fetchFunds();
+  }
 
   render() {
     return (
@@ -89,4 +96,10 @@ const styles = StyleSheet.create({
   }
 });
 
-export default HomeScreen;
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchFunds: () => dispatch(fetchFunds())
+  }
+};
+
+export default connect(null, mapDispatchToProps)(HomeScreen);
