@@ -7,18 +7,15 @@ class AddFundScreen extends Component {
       <Container>
         <Content contentContainerStyle={{flex: 1}}>
           <Form>
-            <Item floatingLabel>
-              <Label>Username</Label>
-              <Input />
-            </Item>
-            <Item floatingLabel last>
-              <Label>Password</Label>
+            <Item stackedLabel>
+              <Label>Add amount</Label>
               <Input />
             </Item>
           </Form>
           <Button rounded block style={{
-            marginTop: "auto",
-            margin: 7,
+            marginTop: 12,
+            marginLeft: 7,
+            marginRight: 7,
             backgroundColor: "#6b52ae"
           }}>
             <Text>Add amount</Text>
