@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Container, Content, Form, Item, Input, Label, Button, Text} from 'native-base';
 
-class AddFundScreen extends Component {
+class ExtractFundScreen extends Component {
   static navigationOptions = {
     headerTitle:
       <Text
@@ -9,7 +9,7 @@ class AddFundScreen extends Component {
           color: "#fff",
           fontWeight: "bold",
           fontSize: 20}}
-      >    Add Funds</Text>,
+      >    Extract Funds</Text>,
     headerStyle: {
       backgroundColor: '#6b52ae',
     },
@@ -24,6 +24,10 @@ class AddFundScreen extends Component {
               <Label>Enter amount</Label>
               <Input />
             </Item>
+            <Item stackedLabel>
+              <Label>Purpose</Label>
+              <Input />
+            </Item>
           </Form>
           <Button rounded block style={{
             marginTop: 12,
@@ -31,7 +35,7 @@ class AddFundScreen extends Component {
             marginRight: 7,
             backgroundColor: "#6b52ae"
           }}>
-            <Text>Add amount</Text>
+            <Text>Extract amount</Text>
           </Button>
         </Content>
       </Container>
@@ -39,4 +43,4 @@ class AddFundScreen extends Component {
   }
 }
 
-export default AddFundScreen;
+export default ExtractFundScreen;

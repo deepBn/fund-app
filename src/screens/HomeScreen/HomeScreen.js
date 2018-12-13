@@ -33,7 +33,11 @@ class HomeScreen extends Component {
         <Content padder contentContainerStyle={{flex: 1}}>
           <Card>
             <CardItem bordered>
-              <Icon type="MaterialCommunityIcons" name="currency-inr" style={{color: "#6b52ae"}}/>
+              <Icon
+                type="MaterialCommunityIcons"
+                name="currency-inr"
+                style={{color: "#6b52ae"}}
+              />
               <Left>
                 <Text>Total avalible fund</Text>
               </Left>
@@ -42,7 +46,11 @@ class HomeScreen extends Component {
               </Right>
             </CardItem>
             <CardItem bordered>
-              <Icon type="Ionicons" name="swap" style={{color: "#6b52ae"}}/>
+              <Icon
+                type="Ionicons"
+                name="swap"
+                style={{color: "#6b52ae"}}
+              />
               <Left>
                 <Text>Last transaction</Text>
               </Left>
@@ -59,7 +67,11 @@ class HomeScreen extends Component {
             >
               <Text>Add fund</Text>
             </Button>
-            <Button rounded style={styles.buttonStyles}>
+            <Button
+              rounded
+              style={styles.buttonStyles}
+              onPress={() => this.props.navigation.navigate('ExtractFund')}
+            >
               <Text>Extract fund</Text>
             </Button>
           </View>
