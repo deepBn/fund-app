@@ -9,9 +9,9 @@ import {
   Right,
   Left,
   Button,
-  View
+  View,
 } from 'native-base';
-import {StyleSheet} from 'react-native';
+import {StyleSheet, ProgressBarAndroid} from 'react-native';
 import {connect} from 'react-redux';
 
 import {fetchFunds} from '../../store/actions';
@@ -35,6 +35,16 @@ class HomeScreen extends Component {
   }
 
   render() {
+    let amount = (
+      <ProgressBarAndroid color="#6b52ae" styleAttr="Small"/>
+    );
+
+    if (this.props.isLoading === false) {
+      amount = (
+        <Text>{this.props.funds}</Text>
+      );
+    }
+
     return (
       <Container>
         <Content padder contentContainerStyle={{flex: 1}}>
@@ -49,7 +59,7 @@ class HomeScreen extends Component {
                 <Text>Total avalible fund</Text>
               </Left>
               <Right>
-                <Text>0</Text>
+                {amount}
               </Right>
             </CardItem>
             <CardItem bordered>
@@ -96,10 +106,17 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = state => {
+  return {
+    funds: state.funds.funds,
+    isLoading: state.ui.isLoading
+  }
+};
+
 const mapDispatchToProps = dispatch => {
   return {
     fetchFunds: () => dispatch(fetchFunds())
   }
 };
 
-export default connect(null, mapDispatchToProps)(HomeScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen);
